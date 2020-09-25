@@ -17,7 +17,7 @@
 <!-- AND there should be links to the other pages -->
 <!-- AND the current page should be In Bold -->
 
-# Dependecies
+# Dependencies
 
 <!-- List out all of the dev work that needs to be completed for this ticket and what other tickets are impacted or blocking this ticket's start/finish -->
 
