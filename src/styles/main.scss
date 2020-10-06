@@ -1,9 +1,18 @@
-@import "~bootstrap/scss/bootstrap";
-@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
-body {
-  background-color: antiquewhite;
-  color: brown;
-  text-align: center;
-  margin-top: 100px;
+@import './components';
+@import './views';
+
+#app {
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  margin-top: 50px;
+  width: 90%;
+}
+
+.hide {
+  display: none;
 }
