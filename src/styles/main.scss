@@ -2,14 +2,13 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 @import './components';
-@import './views';
 
 #app {
   margin: auto;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   flex-flow: row wrap;
-  margin-top: 50px;
   width: 90%;
 }
 
