@@ -6,12 +6,14 @@ import myNavbar from '../../components/myNavbar/myNavbar';
 import viewHelper from '../viewHelpers';
 
 const checkLoginStatus = () => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // person is logged in
-      $('#auth').addClass('hide');
-      $('#pasture').removeClass('hide');
+  firebase.auth().onAuthStateChanged((farmer) => {
+    if (farmer) {
+      const currentFarmer = userData.setCurrentFarmer(farmer);
+      myNavbar.myNavbar(currentFarmer);
+      viewHelper.viewListener('cows-link');
     } else {
+      auth.loginButton();
+      $('#nav').html('');
     }
   });
 };
