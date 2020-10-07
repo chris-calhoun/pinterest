@@ -1,4 +1,4 @@
-import boardData from '../../helpers/data/cowData';
+import boardData from '../../helpers/data/boardData';
 
 const boardMaker = (boardObject) => {
   const domString = `<div class="card m-2" style="width: 18rem;" id="${boardObject.firebaseKey}">
@@ -11,7 +11,7 @@ const boardMaker = (boardObject) => {
     e.stopImmediatePropagation();
     const firebaseKey = e.currentTarget.id;
     $(`.card#${firebaseKey}`).remove();
-    cowData.deleteCow(firebaseKey);
+    boardData.deleteBoard(firebaseKey);
   });
   return domString;
 };

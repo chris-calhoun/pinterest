@@ -24,10 +24,10 @@ const myNavbar = (currentUser) => {
     <div class="collapse navbar-collapse" id="navSupportInfo">
     <ul class="navbar-nav mr-auto">
     <li class="nav-item mx-3"  id="boards-link">
-      <a class="nav-link" href="#"><i class="fas fa-hat-cowboy-side"></i>Board</a>
+      <a class="nav-link" href="#">Boards</a>
     </li>
     <li class="nav-item mx-3" id="pins-link">
-      <a class="nav-link" href="#"><i class="far fa-cow"></i><i class="fas fa-horse"></i>Pins</a>
+      <a class="nav-link" href="#">Pins</a>
     </li>
     </ul>
     
