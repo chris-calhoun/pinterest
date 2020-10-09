@@ -6,12 +6,12 @@ import myNavbar from '../../components/myNavbar/myNavbar';
 import viewHelper from '../viewHelpers';
 
 const checkLoginStatus = () => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
+  firebase.auth().onAuthStateChanged((userObject) => {
+    if (userObject) {
       // assigns user object to current user variable
-      const currentUser = userData.setCurrentUser(user);
+      const currentUser = userData.setCurrentUser(userObject);
       myNavbar.myNavbar(currentUser);
-      viewHelper.viewListener('boards-link', user.uid);
+      viewHelper.viewListener('boards-link', userObject.uid);
     } else {
       auth.loginButton();
       $('#nav').html('');

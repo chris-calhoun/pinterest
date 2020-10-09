@@ -1,8 +1,8 @@
 import BoardsView from '../components/views/boardsView';
 
-const viewHelper = (id, uid) => {
+const viewHelper = (view, uid) => {
   $('#app').html('');
-  switch (id) {
+  switch (view) {
     case 'boards-link':
       return BoardsView.boardView(uid);
     default:
@@ -13,7 +13,7 @@ const viewHelper = (id, uid) => {
 const viewListener = (view, uid) => {
   viewHelper(view, uid);
   $('body').on('click', 'li.nav-item', (e) => {
-    viewHelper(e.currentTarget.id);
+    viewHelper(e.currentTarget.id, uid);
   });
 };
 

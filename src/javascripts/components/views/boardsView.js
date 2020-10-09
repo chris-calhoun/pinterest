@@ -1,10 +1,8 @@
 import boardData from '../../helpers/data/boardData';
 import card from '../cards/boardCard';
 
-const boardView = (user) => {
-  console.warn('in boardView function');
-  boardData.getUserBoards(user).then((response) => {
-    console.warn(response);
+const boardView = (uid) => {
+  boardData.getUserBoards(uid).then((response) => {
     if (response.length) {
       response.forEach((item) => {
         $('#app').append(card.boardMaker(item));
