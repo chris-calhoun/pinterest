@@ -11,7 +11,7 @@ const checkLoginStatus = () => {
       // assigns user object to current user variable
       const currentUser = userData.setCurrentUser(user);
       myNavbar.myNavbar(currentUser);
-      viewHelper.viewListener('boards-link');
+      viewHelper.viewListener('boards-link', user.uid);
     } else {
       auth.loginButton();
       $('#nav').html('');

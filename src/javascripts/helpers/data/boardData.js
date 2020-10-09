@@ -13,16 +13,16 @@ const addBoard = (data) => axios
 
 const getUserBoards = (userUid) => new Promise((resolve, reject) => {
   axios
-    .get(`${baseUrl}/board.json?orderBy="userUid"&equalTo="${userUid}"`)
+    .get(`${baseUrl}/board.json?orderBy="User_ID"&equalTo="${userUid}"`)
     .then((response) => {
       const userBoards = response.data;
-      const cows = [];
+      const boards = [];
       if (userBoards) {
         Object.keys(userBoards).forEach((boardId) => {
-          cows.push(userBoards[boardId]);
+          boards.push(userBoards[boardId]);
         });
       }
-      resolve(cows);
+      resolve(boards);
     })
     .catch((error) => reject(error));
 });
