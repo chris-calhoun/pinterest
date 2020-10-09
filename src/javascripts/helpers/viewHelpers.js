@@ -20,7 +20,7 @@ const viewListener = (view, uid) => {
     viewHelper(e.currentTarget.id, uid);
   });
 
-  $('body').on('click', '.card-body', (e) => {
+  $('body').on('click', '.card-board-body', (e) => {
     e.stopImmediatePropagation();
     PinsView.showBoardPins(e.currentTarget.id);
   });
