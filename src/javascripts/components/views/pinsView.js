@@ -1,7 +1,7 @@
 import pinData from '../../helpers/data/pinData';
 import card from '../cards/pinCards';
 
-const pinView = (uid) => {
+const showAllPins = (uid) => {
   pinData.getUserPins(uid).then((response) => {
     if (response.length) {
       response.forEach((item) => {
@@ -13,4 +13,12 @@ const pinView = (uid) => {
   });
 };
 
-export default { pinView };
+const showBoardPins = () => {
+  console.warn('soon to be board pins');
+  $('body').on('click', '.card-body', (e) => {
+    e.stopImmediatePropagation();
+    $('#app').html('');
+  });
+};
+
+export default { showAllPins, showBoardPins };
