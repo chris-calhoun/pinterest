@@ -13,20 +13,33 @@ const logoutEvent = () => {
   });
 };
 
-const myNavbar = () => {
+const myNavbar = (currentUser) => {
   $('#nav').html(
     `<nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Pinterest</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <button class="nav-link btn btn-danger" id="navbar-logout-button">Logout</button>
-          </li>
-        </ul>
-      </div>
+    <a class="navbar-brand" href="#">Pinterest</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navSupportInfo" aria-controls="navSupportInfo" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navSupportInfo">
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item mx-3"  id="boards-link">
+      <a class="nav-link" href="#">Boards</a>
+    </li>
+    <li class="nav-item mx-3" id="pins-link">
+      <a class="nav-link" href="#">Pins</a>
+    </li>
+    </ul>
+    
+      <ul class="navbar-nav ml-auto">
+        <li class="user-info-nav">
+          Welcome, ${currentUser.name}!
+        </li>
+        <li class="nav-item">
+          <button class="nav-link btn btn-danger p-2" id="navbar-logout-button">Logout</button>
+        </li>
+      </ul>
+    </div>
     </nav>`
   );
 
