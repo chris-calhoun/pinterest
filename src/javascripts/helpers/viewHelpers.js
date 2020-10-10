@@ -3,6 +3,7 @@ import PinsView from '../components/views/pinsView';
 import AddBoardView from '../components/views/addBoardView';
 import AddPinView from '../components/views/addPinView';
 import PinData from './data/pinData';
+import BoardData from './data/boardData';
 
 const viewHelper = (view, uid) => {
   $('#app').html('');
@@ -35,6 +36,11 @@ const viewListener = (view, uid) => {
     e.stopImmediatePropagation();
     $(`.card#${e.target.id}`).remove();
     PinData.deletePin(e.target.id);
+  });
+  $('body').on('click', '.delete-board', (e) => {
+    e.stopImmediatePropagation();
+    $(`.card#${e.target.id}`).remove();
+    BoardData.deleteBoard(e.target.id);
   });
 };
 
