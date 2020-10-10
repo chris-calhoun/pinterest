@@ -1,6 +1,5 @@
-import boardData from '../../helpers/data/boardData';
 import firebase from 'firebase/app';
-import userData from '../../helpers/data/userData';
+import boardData from '../../helpers/data/boardData';
 
 const addBoardForm = () => {
   $('#board-form').html(`

@@ -10,7 +10,7 @@ const viewHelper = (view, uid) => {
     case 'pins-link':
       return PinsView.showAllPins(uid);
     case 'add-board-link':
-      return AddBoardView.AddBoardView();
+      return AddBoardView.addBoardView();
     default:
       return console.warn('nothing clicked');
   }
