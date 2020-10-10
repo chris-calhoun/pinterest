@@ -1,24 +1,24 @@
 import firebase from 'firebase/app';
-import boardData from '../../helpers/data/boardData';
+import pinData from '../../helpers/data/pinData';
 
-const addBoardForm = () => {
-  $('#board-form').html(`
-        <h2>Add a Board</h2>
+const addPinForm = () => {
+  $('#pin-form').html(`
+        <h2>Add a Pin</h2>
         <div id="success-message"></div>
         <form>
           <div id="error-message"></div>
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Example: Ultimate Frisbee, Chess, Coffee, etc.">
+            <input type="text" class="form-control" id="name" placeholder="Could be anything!">
           </div>
           <div class="form-group">
             <label for="image">Image</label>
             <input type="text" class="form-control" id="image" placeholder="Image address">
           </div>
-          <button id="add-board-btn" type="submit" class="btn btn-info"><i class="fas fa-plus-circle"></i>Add Board</button>
+          <button id="add-board-btn" type="submit" class="btn btn-info"><i class="fas fa-plus-circle"></i>Add Pin</button>
         </form>`);
 
-  $('#add-board-btn').on('click', (e) => {
+  $('#add-pin-btn').on('click', (e) => {
     e.preventDefault();
 
     const data = {
@@ -34,11 +34,11 @@ const addBoardForm = () => {
     } else {
       $('#error-message').html('');
 
-      boardData
-        .addBoard(data)
+      pinData
+        .addPin(data)
         .then(() => {
           $('#success-message').html(
-            '<div class="alert alert-success" role="alert">Your Board Was Added!</div>'
+            '<div class="alert alert-success" role="alert">Your Pin Was Added!</div>'
           );
         })
         .catch((error) => console.warn(error));
@@ -52,4 +52,4 @@ const addBoardForm = () => {
   });
 };
 
-export default { addBoardForm };
+export default { addPinForm };
