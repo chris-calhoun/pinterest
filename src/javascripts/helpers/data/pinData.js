@@ -45,8 +45,12 @@ const getUserPins = (userUid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default {
+const deletePin = (pinKey) => axios.delete(`${baseUrl}/pin/${pinKey}.json`);
+
+export default
+{
   getUserPins,
   getBoardPins,
   addPin,
+  deletePin
 };
