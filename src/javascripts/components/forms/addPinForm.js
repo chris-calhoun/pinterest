@@ -22,12 +22,11 @@ const addPinForm = () => {
                     <option value="">Select a Board</option>
                 </select>
             </div>
-          <button id="add-board-btn" type="submit" class="btn btn-info"><i class="fas fa-plus-circle"></i>Add Pin</button>
+          <button id="add-pin-btn" type="submit" class="btn btn-info"><i class="fas fa-plus-circle"></i>Add Pin</button>
         </form>`);
 
   boardData.getUserBoards(firebase.auth().currentUser.uid).then((response) => {
     response.forEach((item) => {
-      console.warn(item);
       $('select').append(
         `<option value = "${item.Board_Firebase_Key}">${item.Name}</option>`
       );
