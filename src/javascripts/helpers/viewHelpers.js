@@ -1,5 +1,6 @@
 import BoardsView from '../components/views/boardsView';
 import PinsView from '../components/views/pinsView';
+import AddBoardView from '../components/views/addBoardView';
 
 const viewHelper = (view, uid) => {
   $('#app').html('');
@@ -8,7 +9,8 @@ const viewHelper = (view, uid) => {
       return BoardsView.boardView(uid);
     case 'pins-link':
       return PinsView.showAllPins(uid);
-
+    case 'add-board-link':
+      return AddBoardView.AddBoardView();
     default:
       return console.warn('nothing clicked');
   }
