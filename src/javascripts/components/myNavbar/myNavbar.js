@@ -29,7 +29,14 @@ const myNavbar = (currentUser) => {
     <li class="nav-item mx-3" id="pins-link">
       <a class="nav-link" href="#">Pins</a>
     </li>
-    </ul>
+    <li class="nav-item mx-3" id="add-board-link">
+      <a class="nav-link" href="#"><i class="fas fa-plus-circle"></i> Add Board</a>
+    </li>
+    <li class="nav-item mx-3" id="add-pin-link">
+      <a class="nav-link" href="#"><i class="fas fa-plus-circle"></i> Add Pin</a>
+    </li>
+
+  </ul>
     
       <ul class="navbar-nav ml-auto">
         <li class="user-info-nav">
