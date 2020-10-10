@@ -2,6 +2,7 @@ import BoardsView from '../components/views/boardsView';
 import PinsView from '../components/views/pinsView';
 import AddBoardView from '../components/views/addBoardView';
 import AddPinView from '../components/views/addPinView';
+import PinData from './data/pinData';
 
 const viewHelper = (view, uid) => {
   $('#app').html('');
@@ -28,6 +29,12 @@ const viewListener = (view, uid) => {
   $('body').on('click', '.card-board-body', (e) => {
     e.stopImmediatePropagation();
     PinsView.showBoardPins(e.currentTarget.id);
+  });
+
+  $('body').on('click', '.delete-pin', (e) => {
+    e.stopImmediatePropagation();
+    $(`.card#${e.target.id}`).remove();
+    PinData.deletePin(e.target.id);
   });
 };
 
