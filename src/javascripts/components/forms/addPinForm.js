@@ -1,4 +1,5 @@
 import firebase from 'firebase/app';
+import boardData from '../../helpers/data/boardData';
 import pinData from '../../helpers/data/pinData';
 
 const addPinForm = () => {
@@ -15,8 +16,23 @@ const addPinForm = () => {
             <label for="image">Image</label>
             <input type="text" class="form-control" id="image" placeholder="Image address">
           </div>
+          <div class="form-group">
+            <label for="board">Board</label>
+                <select class="form-control" id="board">
+                    <option value="">Select a Board</option>
+                </select>
+            </div>
           <button id="add-board-btn" type="submit" class="btn btn-info"><i class="fas fa-plus-circle"></i>Add Pin</button>
         </form>`);
+
+  boardData.getUserBoards(firebase.auth().currentUser.uid).then((response) => {
+    response.forEach((item) => {
+      console.warn(item);
+      $('select').append(
+        `<option value = "${item.Board_Firebase_Key}">${item.Name}</option>`
+      );
+    });
+  });
 
   $('#add-pin-btn').on('click', (e) => {
     e.preventDefault();
@@ -25,6 +41,7 @@ const addPinForm = () => {
       Name: $('#name').val() || false,
       Image_URL: $('#image').val() || false,
       User_ID: firebase.auth().currentUser.uid,
+      Board_Firebase_Key: $('#board').val() || false,
     };
 
     if (Object.values(data).includes(false)) {
@@ -48,6 +65,7 @@ const addPinForm = () => {
       }, 3000);
       $('#name').val('');
       $('#image').val('');
+      $('#board').val('');
     }
   });
 };
