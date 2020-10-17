@@ -1,6 +1,6 @@
 # Pinterest
 
-The goal of this project was to recreate Pinterest. Once a user logs in, they are able to view, create, update, and delete boards. Within those boards, they are able to add associated pins.
+The goal of this project was to recreate Pinterest. Once a user logs in, they are able to view, create, update, and delete boards. Within those boards, they are able to view, create, update, and delete associated pins.
 
 ## Motivation
 
