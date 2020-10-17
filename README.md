@@ -54,4 +54,4 @@ https://pinterest-aa40e.web.app/
 
 ## ERD
 
-![Alt text](/src/images/Pinterest_ERD.pdf 'Sorting Hat Website')
+![Alt text](/src/images/Pinterest_ERD.png 'Pinterest Website')
