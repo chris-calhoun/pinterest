@@ -49,8 +49,9 @@ const getBoardPins = (boardId) => new Promise((resolve, reject) => {
 ```
 
 ## Deployed Site
+
 https://pinterest-aa40e.web.app/
 
 ## ERD
 
-
+![Alt text](/src/images/Pinterest_ERD.pdf 'Sorting Hat Website')
