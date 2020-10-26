@@ -5,6 +5,7 @@ const boardMaker = (boardObject) => {
   <img class="card-img-top" src="${boardObject.Image_URL}" alt="Card image cap">
     <h5 class="card-title">${boardObject.Name}</h5>
     </div>
+    <button type="button" id="${boardObject.Board_Firebase_Key}" class="btn btn-dark update-form">Update</button>
   </div>`;
 
   return domString;

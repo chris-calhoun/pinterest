@@ -1,7 +1,8 @@
+import firebase from 'firebase/app';
 import boardData from '../../helpers/data/boardData';
 
 const updateBoardForm = (boardObj) => {
-$('#update-board').html(`
+  $('#update-board').html(`
 <h2>Update Board</h2>
 <div id="success-message"></div>
 <form>
@@ -17,33 +18,33 @@ $('#update-board').html(`
   <button id="update-board-btn" type="submit" class="btn btn-info"><i class="fas fa-plus-circle"></i>Update Board</button>
 </form>`);
 
-$('#update-board-btn').on('click', (e) => {
+  $('#update-board-btn').on('click', (e) => {
     e.preventDefault();
     const updatedBoardObj = {
-        Name: $('#name').val() || false,
-        Image_URL: $('#image').val() || false,
-        User_ID: firebase.auth().currentUser.uid,
+      Name: $('#name').val() || false,
+      Image_URL: $('#image').val() || false,
+      User_ID: firebase.auth().currentUser.uid,
     };
     if (Object.values(updatedBoardObj).includes(false)) {
-        $('#error-message').html(
-          '<div class="alert alert-danger" role="alert">Please fill all fields!</div>'
-        );
-      } else {
-        $('#error-message').html('');
-        boardData
-          .updateBoard(obj.uid, updatedBoardObj)
-          .then(() => {
-            $('#success-message').html(
-              '<div class="alert alert-success" role="alert">Info Updated!</div>'
-            );
-          })
-          .catch((error) => console.warn(error));
-        setTimeout(() => {
-          $('#success-message').html('');
-        }, 2000);
-        $('#board').val('');
-      }
-    });
+      $('#error-message').html(
+        '<div class="alert alert-danger" role="alert">Please fill all fields!</div>'
+      );
+    } else {
+      $('#error-message').html('');
+      boardData
+        .updateBoard(boardObj.Board_Firebase_Key, updatedBoardObj)
+        .then(() => {
+          $('#success-message').html(
+            '<div class="alert alert-success" role="alert">Info Updated!</div>'
+          );
+        })
+        .catch((error) => console.warn(error));
+      setTimeout(() => {
+        $('#success-message').html('');
+      }, 2000);
+      $('#board').val('');
+    }
+  });
 };
 
 export default { updateBoardForm };

@@ -56,5 +56,6 @@ export default {
   getUserBoards,
   addBoard,
   deleteBoard,
-  updateBoard
+  updateBoard,
+  getBoard
 };
