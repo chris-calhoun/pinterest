@@ -4,6 +4,7 @@ import AddBoardView from '../components/views/addBoardView';
 import AddPinView from '../components/views/addPinView';
 import PinData from './data/pinData';
 import BoardData from './data/boardData';
+import UpdateBoard from '../components/forms/updateBoardForm';
 
 const viewHelper = (view, uid) => {
   $('#app').html('');
@@ -16,6 +17,8 @@ const viewHelper = (view, uid) => {
       return AddBoardView.addBoardView();
     case 'add-pin-link':
       return AddPinView.addPinView();
+    case 'update-board':
+      return UpdateBoard.updateBoardForm();
     default:
       return console.warn('nothing clicked');
   }
@@ -25,6 +28,10 @@ const viewListener = (view, uid) => {
   viewHelper(view, uid);
   $('body').on('click', 'li.nav-item', (e) => {
     viewHelper(e.currentTarget.id, uid);
+  });
+
+  $('body').on('click', 'update-form', (e) => {
+    viewHelper(e.currentTarget.id, user);
   });
 
   $('body').on('click', '.card-board-body', (e) => {
