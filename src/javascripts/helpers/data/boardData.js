@@ -50,8 +50,12 @@ const deleteBoard = (boardKey) => {
     });
 };
 
+const updateBoard = (uid, obj) => axios.patch(`${baseUrl}/board/${uid}.json`, obj);
+
 export default {
   getUserBoards,
   addBoard,
-  deleteBoard
+  deleteBoard,
+  updateBoard,
+  getBoard
 };
