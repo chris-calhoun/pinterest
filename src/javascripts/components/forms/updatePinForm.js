@@ -28,9 +28,6 @@ const updatePinForm = (pinObject) => {
   boardData.getUserBoards(firebase.auth().currentUser.uid).then((response) => {
     response.forEach((board) => {
       $('#board-dropdown').append(`<option value='${board.Board_Firebase_Key}' ${pinObject.Board_Firebase_Key === board.Board_Firebase_Key ? "selected='selected'" : ''}>${board.Name}</option>`);
-      // $('#board-dropdown').append(
-      //   `<option value = "${board.Board_Firebase_Key}">${board.Name}</option>`
-      // );
     });
   });
 
