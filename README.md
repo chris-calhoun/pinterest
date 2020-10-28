@@ -13,6 +13,8 @@ The motivation for this project was to display CRUD principles and Firebase auth
 
 ## Screenshots
 
+![Alt text](/src/images/BoardView.png 'Boards View')
+
 ## Tech/Framwork
 
 - Javascript ES6
